@@ -1,5 +1,8 @@
-.icon-menu {
+.nav-1{
+    background: linear-gradient(93deg, #3e1265, #9f7ebb);
+}
 
+.icon-menu {
     width: 60px;
     height: 30px;
 }
