@@ -32,5 +32,11 @@
 
 
 }
+.data-container{
+    text-align: center;
+}
 
+.data-container p{
+    align-items: center;
+}
 

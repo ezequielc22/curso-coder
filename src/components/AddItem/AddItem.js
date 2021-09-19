@@ -6,6 +6,7 @@ import "./AddItem.css";
 import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
 import IconButton from '@mui/material/IconButton';
+import Button from '@mui/material/Button';
 
 
 const AddItem = (props) => {
@@ -15,14 +16,13 @@ const AddItem = (props) => {
     const[disableButton, setDisableButton] = useState(false);
     const[disableButton2, setDisableButton2] = useState(false);
     
-    const sumar = () =>{
+    const sumar = () => {
         if(items < stock ? (setItems(items +1) , setDisableButton2(false)) : setDisableButton(true));
     }
-    const restar = () =>{
+    const restar = () => {
         if(items > 0 ? (setItems(items - 1) , setDisableButton(false)) : setDisableButton2(true));    
     
     }
-    console.log(props);
     return (
         
             <div className="add-item">
@@ -31,8 +31,9 @@ const AddItem = (props) => {
                 </IconButton>
                 <h1 style={{userSelect:"none"}}>{items}</h1>
                 <IconButton disabled={disableButton} onClick={sumar}>
-                    <AddIcon color="secondary"/>
+                    <AddIcon color="secondary" />
                 </IconButton>
+                <Button variant="outlined" color="secondary" >Agregar al carrito</Button> 
             </div>
     )
 }

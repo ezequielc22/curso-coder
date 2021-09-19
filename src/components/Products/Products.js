@@ -1,10 +1,9 @@
 
-import React,{useState} from 'react'
+import React from 'react'
 import "./Products.css"
 import img from '../../images/1.png';
 
 //externals
-import Button from '@mui/material/Button';
 import AddItem from '../AddItem/AddItem';
 
 
@@ -18,10 +17,13 @@ const Products = (props) => {
                 </div>
 
                 <div className="container-product-data">
+                    <div className="data-container">
                     <h1>{props.title}</h1>
-                    <p>${props.price}</p>
-                    <Button variant="outlined" color="secondary" >Comprar</Button> 
+                    <p>${props.price}</p>                        
+                    </div>
                     <AddItem stock={props.stock}/>
+
+
                 </div>
             </div>
     )

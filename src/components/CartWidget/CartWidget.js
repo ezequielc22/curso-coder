@@ -8,7 +8,7 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 
 const amount = 1;
-const CartWidget = () => {
+const CartWidget = (props) => {
     return (
         <>
             <div className="cart-icon" >
