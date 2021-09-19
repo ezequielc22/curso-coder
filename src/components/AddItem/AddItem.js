@@ -12,12 +12,11 @@ import Button from '@mui/material/Button';
 const AddItem = (props) => {
    
     const[items,setItems] = useState(0);
-    const[stock,setStock] =useState(props.stock);
     const[disableButton, setDisableButton] = useState(false);
     const[disableButton2, setDisableButton2] = useState(false);
     
     const sumar = () => {
-        if(items < stock ? (setItems(items +1) , setDisableButton2(false)) : setDisableButton(true));
+        if(items < props.stock ? (setItems(items +1) , setDisableButton2(false)) : setDisableButton(true));
     }
     const restar = () => {
         if(items > 0 ? (setItems(items - 1) , setDisableButton(false)) : setDisableButton2(true));    
