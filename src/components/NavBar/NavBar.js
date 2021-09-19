@@ -1,7 +1,7 @@
 //local
 import "./NavBar.css";
-import img from './../images/1.png';
-
+import img from '../../images/1.png';
+import CartWidget from "../CartWidget/CartWidget";
 
 //externals 
 import { makeStyles } from '@material-ui/core/styles';
@@ -10,7 +10,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
-import CartWidget from "./CartWidget";
+
 
 
 const useStyles = makeStyles((theme) => ({

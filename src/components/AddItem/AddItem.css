@@ -1,0 +1,10 @@
+.add-item{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: small;
+}
+.add-item Button{
+    
+}

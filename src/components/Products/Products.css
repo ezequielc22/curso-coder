@@ -1,0 +1,36 @@
+.container-img-producto{
+    padding-top:10px;
+    width: 175px;
+    height: 175px;
+
+}
+.container-img-producto img{
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+}
+
+.product-cards{
+
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 210px;
+    height: 500px;
+    border: 2px solid rgb(34, 34, 34);
+    box-shadow: 3px 3px rgb(77, 77, 77), -0.4em 0 0.4em #3e1265;
+    margin: 10px;
+
+}
+.cards-container{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 35px;
+
+
+}
+
+
