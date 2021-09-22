@@ -1,14 +1,17 @@
 
 import React from 'react'
-import "./Products.css"
+import "./Item.css"
 import img from '../../images/1.png';
 
 //externals
-import AddItem from '../AddItem/AddItem';
+import ItemCount from '../ItemCount/ItemCount';
 
 
 const Products = (props) => {
-
+    const onAdd = () =>{
+        console.log("Se van a agregar items al carrito")
+      }
+      
     return (
             <div className="product-cards">
 
@@ -21,7 +24,7 @@ const Products = (props) => {
                     <h1>{props.title}</h1>
                     <p>${props.price}</p>                        
                     </div>
-                    <AddItem stock={props.stock}/>
+                    <ItemCount onAdd={onAdd} stock={props.stock}/>
 
 
                 </div>

@@ -1,5 +1,5 @@
 import React ,{useState} from 'react';
-import "./AddItem.css";
+import "./ItemCount.css";
 
 //externals
 
@@ -9,17 +9,17 @@ import IconButton from '@mui/material/IconButton';
 import Button from '@mui/material/Button';
 
 
-const AddItem = (props) => {
+const ItemCount = (props) => {
    
     const[items,setItems] = useState(0);
     const[disableButton, setDisableButton] = useState(false);
     const[disableButton2, setDisableButton2] = useState(false);
     
     const sumar = () => {
-        if(items < props.stock ? (setItems(items +1) , setDisableButton2(false)) : setDisableButton(true));
+        return (items < props.stock ? (setItems(items +1) , setDisableButton2(false)) : setDisableButton(true));
     }
     const restar = () => {
-        if(items > 0 ? (setItems(items - 1) , setDisableButton(false)) : setDisableButton2(true));    
+        return (items > 0 ? (setItems(items - 1) , setDisableButton(false)) : setDisableButton2(true));    
     
     }
     return (
@@ -32,9 +32,9 @@ const AddItem = (props) => {
                 <IconButton disabled={disableButton} onClick={sumar}>
                     <AddIcon color="secondary" />
                 </IconButton>
-                <Button variant="outlined" color="secondary" >Agregar al carrito</Button> 
+                <Button variant="outlined" color="secondary" onClick={props.onAdd} >Agregar al carrito</Button> 
             </div>
     )
 }
 
-export default AddItem;
+export default ItemCount;

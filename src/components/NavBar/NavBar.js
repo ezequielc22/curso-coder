@@ -44,7 +44,7 @@ const NavBar = () => {
                     <Button color="inherit">Tienda</Button>
                     <Button color="inherit">Carrito</Button>
                     <Button color="inherit">Contacto</Button>
-                    <CartWidget/>
+                    <CartWidget />
                 </Toolbar>
  
             </AppBar>
