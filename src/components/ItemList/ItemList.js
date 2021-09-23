@@ -53,7 +53,7 @@ const ItemList = (props) => {
     return (
         <div className="cards-container">
             {products.map((product)=>{
-                return (<Item key={product.id} title={product.title} price={product.price} stock={product.stock} />)
+                return (<Item onAdd={props.onAdd} key={product.id} title={product.title} price={product.price} stock={product.stock} />)
             })}
 
             

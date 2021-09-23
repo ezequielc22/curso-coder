@@ -1,5 +1,5 @@
 
-import React from 'react'
+import React,{useState, useEffect} from 'react'
 import "./Item.css"
 import img from '../../images/1.png';
 
@@ -7,11 +7,8 @@ import img from '../../images/1.png';
 import ItemCount from '../ItemCount/ItemCount';
 
 
-const Products = (props) => {
-    const onAdd = () =>{
-        console.log("Se van a agregar items al carrito")
-      }
-      
+const Item = (props) => {
+
     return (
             <div className="product-cards">
 
@@ -21,15 +18,15 @@ const Products = (props) => {
 
                 <div className="container-product-data">
                     <div className="data-container">
-                    <h1>{props.title}</h1>
-                    <p>${props.price}</p>                        
+                        <h1>{props.title}</h1>
+                        <p>${props.price}</p>                        
                     </div>
-                    <ItemCount onAdd={onAdd} stock={props.stock}/>
 
+                    <ItemCount onAdd={props.onAdd} stock={props.stock}/>
 
                 </div>
             </div>
     )
 }
 
-export default Products;
+export default Item;
