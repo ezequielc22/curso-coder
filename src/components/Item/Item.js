@@ -1,14 +1,10 @@
-
 import React from 'react'
 import "./Item.css"
-
-
 
 //externals
 import ItemCount from '../ItemCount/ItemCount';
 import { Button } from '@material-ui/core';
 import { Link } from 'react-router-dom';
-
 
 
 const Item = (props) => {
@@ -27,7 +23,7 @@ const Item = (props) => {
                     </div>
 
                     <ItemCount onAdd={props.onAdd} stock={props.data.stock}/>
-                    <Button>
+                    <Button style={{display:"block", margin:"auto"}}>
                         <Link to={`/item/${props.data.id}`} style={{textDecoration: "none"}} >
                         VER MAS
                         </Link>

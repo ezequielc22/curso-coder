@@ -33,15 +33,15 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 
-const NavBar = (props) => {
+const NavBar = () => {
     const classes = useStyles();
     const [categories,setCategories] = useState([
       {
-        categoria: 'normal',
+        categoria: 'monografias',
         id: 1
       },
       {
-        categoria: 'encantado',
+        categoria: 'filosofia',
         id: 2
       }
     ]);

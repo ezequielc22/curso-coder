@@ -16,8 +16,8 @@ function AppRouter() {
     <div className="AppRouter">
 
             <Router>
-                <img src={fondo} className="fondo"/>
-                <NavBar />          
+                <img src={fondo} alt="fondo" className="fondo"/>
+                <NavBar/>          
             <Switch>  
 
                 <Route path="/category/:catId">    
