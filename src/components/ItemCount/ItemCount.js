@@ -26,13 +26,13 @@ const ItemCount = (props) => {
         
             <div className="add-item">
                 <IconButton disabled={disableButton2} onClick={restar}>
-                    <RemoveIcon color="secondary"/>
+                    <RemoveIcon style={{color:"#91642e"}}/>
                 </IconButton>
                 <h1 style={{userSelect:"none"}}>{items}</h1>
                 <IconButton disabled={disableButton} onClick={sumar}>
-                    <AddIcon color="secondary" />
+                    <AddIcon style={{color:"#91642e"}} />
                 </IconButton>
-                <Button variant="outlined" color="secondary" onClick={props.onAdd} >Agregar al carrito</Button> 
+                <Button variant="outlined" color="secondary" onClick={props.onAdd} style={{color:"#91642e", border:"1px solid #91642e"}}>Agregar al carrito</Button> 
             </div>
     )
 }

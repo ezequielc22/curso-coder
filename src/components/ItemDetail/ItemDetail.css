@@ -17,18 +17,19 @@
     padding-right: 50px;
 }
 .detail{
+    background-color: white;
     display: flex;
     margin-left: 200px;
     margin-right: 200px;
     border: 2px solid rgb(34, 34, 34);
     margin-top: 50px;
     flex-direction: row;
-    box-shadow: 3px 3px rgb(77, 77, 77), -0.4em 0 0.4em #3e1265;
+    box-shadow: 3px 3px rgb(77, 77, 77), -0.4em 0 0.4em #000000;
     position:relative;
     
 }
 .title{
-    box-shadow: 3px 3px rgb(77, 77, 77), -0.1em 0 0.1em #3e1265;
+    box-shadow: 3px 3px rgb(77, 77, 77), -0.1em 0 0.1em #c98a3e;
 }
 .button-add{
     max-width: 200px;
