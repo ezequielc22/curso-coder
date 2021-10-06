@@ -48,7 +48,6 @@ const ItemDetail = (props) => {
 
     }
 
-
     return (
         <div className="detail">
                 <div className="detail-img-container">
@@ -59,11 +58,11 @@ const ItemDetail = (props) => {
                     <p className="price">{props.data.price}€</p>  
                     <p className="description">{props.data.description}</p>                         
                 </div>
-                <div className="button-add" style={estilo2}>
+                <div className="buttons" style={estilo2}>
                     <ItemCount disableButton={disableButton} disableButton2={disableButton2}
                     onAdd={onAdd} onLess={onLess} items={items} visibility={visibility} />
                 </div>
-                <div className="button-add"  style={estilo}>
+                <div className="buttons"  style={estilo}>
                 <Button onClick={visibility2} variant="outlined" color="secondary" style={{color:"#91642e", border:"1px solid #91642e"}}>
                     <Link to="/cart" style={{textDecoration: "none"}}>Terminar Compra</Link>
                 </Button>
