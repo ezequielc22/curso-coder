@@ -5,11 +5,9 @@ import ItemDetailContainer from '../../components/ItemDetailContainer/ItemDetail
 import React  from 'react';
 import { fondo } from '../../images/images';
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import CartContainer from '../CartContainer/CartContainer';
 
 function AppRouter() {
-    const onAdd = () =>{
-        console.log("Se van a agregar items al carrito")
-    }
 
   return (
 
@@ -20,15 +18,11 @@ function AppRouter() {
                 <NavBar/>          
             <Switch>  
 
-                <Route path="/category/:catId">    
-                    <ItemListContainer onAdd={onAdd}/> 
-                </Route>
-                <Route path="/item/:id">
-                    <ItemDetailContainer onAdd={onAdd} /> 
-                </Route>
-                <Route path="/">    
-                    <ItemListContainer onAdd={onAdd}/> 
-                </Route>
+                <Route path="/category/:catId" component={ItemListContainer}/>    
+                <Route path="/item/:id" component={ItemDetailContainer}/>
+                <Route path="/cart"component={CartContainer}/>
+                <Route path="/"component={ItemListContainer}/>    
+
 
             </Switch>    
         </Router>

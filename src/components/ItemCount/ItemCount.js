@@ -1,4 +1,4 @@
-import React ,{useState} from 'react';
+import React  from 'react';
 import "./ItemCount.css";
 
 //externals
@@ -10,29 +10,18 @@ import Button from '@mui/material/Button';
 
 
 const ItemCount = (props) => {
-   
-    const[items,setItems] = useState(0);
-    const[disableButton, setDisableButton] = useState(false);
-    const[disableButton2, setDisableButton2] = useState(false);
-    
-    const sumar = () => {
-        return (items < props.stock ? (setItems(items +1) , setDisableButton2(false)) : setDisableButton(true));
-    }
-    const restar = () => {
-        return (items > 0 ? (setItems(items - 1) , setDisableButton(false)) : setDisableButton2(true));    
-    
-    }
+
     return (
         
             <div className="add-item">
-                <IconButton disabled={disableButton2} onClick={restar}>
+                <IconButton disabled={props.disableButton2} onClick={props.onLess}>
                     <RemoveIcon style={{color:"#91642e"}}/>
                 </IconButton>
-                <h1 style={{userSelect:"none"}}>{items}</h1>
-                <IconButton disabled={disableButton} onClick={sumar}>
+                <h1 style={{userSelect:"none"}}>{props.items}</h1>
+                <IconButton disabled={props.disableButton} onClick={props.onAdd}>
                     <AddIcon style={{color:"#91642e"}} />
                 </IconButton>
-                <Button variant="outlined" color="secondary" onClick={props.onAdd} style={{color:"#91642e", border:"1px solid #91642e"}}>Agregar al carrito</Button> 
+                <Button variant="outlined" color="secondary" onClick={props.visibility} style={{color:"#91642e", border:"1px solid #91642e"}}>Agregar al carrito</Button> 
             </div>
     )
 }

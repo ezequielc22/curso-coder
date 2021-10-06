@@ -77,7 +77,7 @@ const ItemDetailContainer = (props) => {
     return (
         <div className="detail-container">
             
-            <ItemDetail onAdd={props.onAdd} data={infoItem}/>
+            <ItemDetail data={infoItem}/>
 
         </div>
     )
