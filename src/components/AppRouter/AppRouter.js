@@ -7,25 +7,30 @@ import { fondo } from '../../images/images';
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import CartContainer from '../CartContainer/CartContainer';
 
+//Context
+import  { CartProvider }  from '../../contexts/CartContext.js';
+
 function AppRouter() {
 
   return (
 
     <div className="AppRouter">
 
-            <Router>
-                <img src={fondo} alt="fondo" className="fondo"/>
-                <NavBar/>          
-            <Switch>  
+      <Router>
+        <CartProvider>  
+            <img src={fondo} alt="fondo" className="fondo"/>
+            <NavBar/>          
+          <Switch>  
 
-                <Route path="/category/:catId" component={ItemListContainer}/>    
-                <Route path="/item/:id" component={ItemDetailContainer}/>
-                <Route path="/cart"component={CartContainer}/>
-                <Route path="/"component={ItemListContainer}/>    
+            <Route path="/category/:catId" component={ItemListContainer}/>    
+            <Route path="/item/:id" component={ItemDetailContainer}/>
+            <Route path="/cart"component={CartContainer}/>
+            <Route path="/"component={ItemListContainer}/>    
 
 
-            </Switch>    
-        </Router>
+          </Switch> 
+        </CartProvider>     
+      </Router>
     </div>
   );
 }
