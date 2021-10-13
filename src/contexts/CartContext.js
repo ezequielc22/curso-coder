@@ -1,10 +1,17 @@
-import React, { createContext,useState} from "react";
+//local
+import React, { createContext, useState, useEffect} from "react";
 
 
 const CartContext = createContext();
 
 const CartProvider = ({children}) => {
     const [products , setProducts] = useState([]);
+    const [total, setTotal] = useState(0);
+
+    useEffect(() => {
+        setTotal(handleTotal())
+    }, [products])
+    
     const addItem = (item, quantity) =>{
         let cartElement = {item, quantity};
         let aux = []
@@ -32,20 +39,45 @@ const CartProvider = ({children}) => {
 
     };
 
+    const removeItem = (item) => {
+        if(products.some(element => element.item.id === item.id)){
+            let cartElements = products.filter(element => element.item.id !== item.id)
+            setProducts([...cartElements])
+        }
+        
+    }
 
-    console.log("Test", products);
+    const clear = () => {
+        setProducts([])
+    }
+
+    const handleTotal = () => {  
+        let aux = 0
+        return (
+          products && products.reduce((accumulator, currentValue) => {          
+              return accumulator + currentValue.quantity                              
+            },
+            aux
+          )    
+        )
+    }
+
+
     const data = {
         products,
-        addItem
+        addItem,
+        removeItem,
+        clear,
+        total
     }
 
     return(
         <CartContext.Provider value={data}>
             {children}
         </CartContext.Provider>
-
     )
 
 };
+
 export { CartProvider }
 export default CartContext;

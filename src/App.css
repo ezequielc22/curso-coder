@@ -6,3 +6,16 @@
 }
 *{font-family: 'Bebas Neue', cursive;}
 
+body::-webkit-scrollbar{
+    width: 15px;
+    background-color: #443420;
+
+}
+body::-webkit-scrollbar-thumb{
+    border-radius: 30px;
+    background-color: #443420;
+}
+body::-webkit-scrollbar-thumb:hover{
+    border-radius: 30px;
+    background-color: #91642e;
+}

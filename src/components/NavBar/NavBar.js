@@ -1,7 +1,10 @@
 //local
 import React,{useState}  from 'react';
-import "./NavBar.css";
+import {Link} from "react-router-dom";
+
+//components
 import CartWidget from "../CartWidget/CartWidget";
+import "./NavBar.css";
 
 //externals 
 import { makeStyles } from '@material-ui/core/styles';
@@ -14,7 +17,7 @@ import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import PopupState, { bindTrigger, bindMenu } from 'material-ui-popup-state';
-import {Link} from "react-router-dom";
+
 
 
 
@@ -28,7 +31,6 @@ const useStyles = makeStyles((theme) => ({
     title: {
       flexGrow: 1,
       fontFamily:" 'Bebas Neue', cursive",
-
     },
   }));
 

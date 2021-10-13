@@ -1,14 +1,16 @@
-import React, { useState,useEffect } from 'react'
-import "./ItemList.css"
-import Item from '../Item/Item.js'
+//local
+import React, { useState,useEffect } from 'react';
 import { useParams } from "react-router";
-import {libro1, libro2, libro3, libro4, libro5, libro6} from '../../images/images'
 
-const ItemList = (props) => {
+//components
+import "./ItemList.css";
+import Item from '../Item/Item.js';
+import {libro1, libro2, libro3, libro4, libro5, libro6} from '../../images/images';
+
+const ItemList = () => {
     
     const{catId} = useParams();
-    console.log(catId);
-
+    
     const[products, setProduct] = useState([]);
     const getProducts = new Promise ((resolve)=>{
         setTimeout(()=>{
@@ -73,12 +75,10 @@ const ItemList = (props) => {
 
             resolve(mockProducts)
         }, 2000)
-
     })
 
     useEffect(()=>{
         getProducts.then ( (res)=>{
-
             if(catId===undefined){
                 setProduct(res);
             }
@@ -96,12 +96,10 @@ const ItemList = (props) => {
 
     }, [catId])
 
-
-
     return (
         <div className="cards-container">
             {products.map((product, index)=>{
-                return (<Item onAdd={props.onAdd} key={index} data={product}/>)
+                return (<Item key={index} data={product}/>)
             })}
         </div>
     )

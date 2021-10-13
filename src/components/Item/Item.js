@@ -1,10 +1,14 @@
+//local
 import React, {useState, useContext} from 'react'
-import "./Item.css"
-
-//externals
-import ItemCount from '../ItemCount/ItemCount';
-import { Button } from '@material-ui/core';
 import { Link } from 'react-router-dom';
+
+//components
+import ItemCount from '../ItemCount/ItemCount';
+import "./Item.css"
+//externals
+import { Button } from '@material-ui/core';
+
+//context
 import CartContext from '../../contexts/CartContext'
 
 
@@ -37,11 +41,11 @@ const Item = (props) => {
                 <div className="container-product-data">
                     <div className="data-container">
                         <h1>{props.data.title}</h1>
-                        <p>${props.data.price}</p>                        
+                        <p>{props.data.price}€</p>                        
                     </div>
 
                     <ItemCount disableButton={disableButton} disableButton2={disableButton2}
-                    onAdd={onAdd} onLess={onLess} items={items} addToCart={addToCart} />
+                        onAdd={onAdd} onLess={onLess} items={items} addToCart={addToCart} />
                     <Button style={{display:"block", margin:"auto"}}>
                         <Link to={`/item/${props.data.id}`} style={{textDecoration: "none"}} >
                         VER MAS
@@ -52,4 +56,5 @@ const Item = (props) => {
             </div>
     )
 }
+
 export default Item;
