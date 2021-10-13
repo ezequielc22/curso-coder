@@ -11,7 +11,7 @@ import CartContext from '../../contexts/CartContext'
 const Item = (props) => {
 
 
-    const { addProduct } = useContext(CartContext);
+    const { addItem } = useContext(CartContext);
 
 
     const[items,setItems] = useState(0);
@@ -24,7 +24,7 @@ const Item = (props) => {
         return (items > 0 ? (setItems(items - 1) , setDisableButton(false)) : setDisableButton2(true));    
     }
     const addToCart = () =>{
-        addProduct(props.data, items);
+        addItem(props.data, items);
     }
 
     return (
