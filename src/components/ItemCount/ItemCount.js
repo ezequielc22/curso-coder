@@ -21,7 +21,7 @@ const ItemCount = (props) => {
                 <IconButton disabled={props.disableButton} onClick={props.onAdd}>
                     <AddIcon style={{color:"#91642e"}} />
                 </IconButton>
-                <Button variant="outlined" color="secondary" onClick={props.visibility, props.addToCart} style={{color:"#91642e", border:"1px solid #91642e"}}>
+                <Button variant="outlined" color="secondary" onClick={props.addToCart} style={{color:"#91642e", border:"1px solid #91642e"}}>
                     Agregar al carrito
                 </Button> 
             </div>

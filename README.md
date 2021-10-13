@@ -5,7 +5,7 @@
 ## Instalacion
 
 Ir a (https://github.com/ezequielc22/curso-coder.git), ir a la pestaña fork y realizar el git clone para clonar repositorio y tenerlo de manera local.
-Ir al IDE y abrir el proyecto, y en la terminal correr `npm start`.
+Ir al IDE y abrir el proyecto, y en la terminal correr `npm install`.
 
  ### `npm start`
 

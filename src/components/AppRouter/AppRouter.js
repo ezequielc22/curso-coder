@@ -21,12 +21,11 @@ function AppRouter() {
             <img src={fondo} alt="fondo" className="fondo"/>
             <NavBar/>          
           <Switch>  
-
+            
             <Route path="/category/:catId" component={ItemListContainer}/>    
             <Route path="/item/:id" component={ItemDetailContainer}/>
             <Route path="/cart"component={CartContainer}/>
             <Route path="/"component={ItemListContainer}/>    
-
 
           </Switch> 
         </CartProvider>     
