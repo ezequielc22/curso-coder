@@ -1,10 +1,12 @@
 //local
-import React,{useState}  from 'react';
+import React,{useState, useEffect}  from 'react';
 import {Link} from "react-router-dom";
 
 //components
 import CartWidget from "../CartWidget/CartWidget";
 import "./NavBar.css";
+import db from '../../firebase';
+import {collection, getDocs } from 'firebase/firestore';
 
 //externals 
 import { makeStyles } from '@material-ui/core/styles';
@@ -37,16 +39,21 @@ const useStyles = makeStyles((theme) => ({
 
 const NavBar = () => {
     const classes = useStyles();
-    const [categories,setCategories] = useState([
-      {
-        categoria: 'monografias',
-        id: 1
-      },
-      {
-        categoria: 'filosofia',
-        id: 2
-      }
-    ]);
+    const [categories,setCategories] = useState([]);
+    
+    async function getCategories(db){
+      const categoriesCol = collection(db, 'categories');
+      const categoriesSnapshot = await getDocs(categoriesCol);
+      const categoriesList = categoriesSnapshot.docs.map(doc => doc.data())
+      return categoriesList;
+    }
+  useEffect(()=>{
+    getCategories(db).then((res)=>{
+      setCategories(res)
+      console.log("hola1", res)
+    })
+
+  },[])
 
 
 
@@ -80,7 +87,7 @@ const NavBar = () => {
 
                             {categories.map((cat)=>{
                               return (<MenuItem key={cat.id} onClick={()=>{popupState.close();} }>
-                                        <Link to={`/category/${cat.categoria}`} style={{textDecoration: "none"}}>{cat.categoria}</Link>
+                                        <Link to={`/category/${cat.name}`} style={{textDecoration: "none"}}>{cat.name}</Link>
                                       </MenuItem>)})
                             }
                             
