@@ -8,7 +8,7 @@ import ItemList from '../ItemList/ItemList'
 const ItemListContainer = () => {
 
     return (
-        <div className="main-container">
+        <div className="main-container" style={{fontFamily:" 'Bebas Neue', cursive"}}>
             <ItemList/>
         </div>
     )

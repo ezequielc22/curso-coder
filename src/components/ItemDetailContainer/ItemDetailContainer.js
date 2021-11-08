@@ -31,7 +31,7 @@ const ItemDetailContainer = () => {
 
 
     return (
-        <div className="detail-container">
+        <div className="detail-container" style={{fontFamily:" 'Bebas Neue', cursive"}}>
 
             <ItemDetail data={infoItem}/>
 

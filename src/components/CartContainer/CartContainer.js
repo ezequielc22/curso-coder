@@ -17,11 +17,14 @@ const CartContainer = () => {
     const { products, removeItem, clear } = useContext(CartContext);
 
     const calcularTotal = () =>{
+        let total = 0;
         const aux = products.map((prod)=>prod.quantity * parseInt(prod.item.price))
-        const total = aux.reduce((acc,item)=>{ return acc= acc + item;});
+        if(aux.length === 0){
+            total = 0;
+        }else{
+        const total = aux.reduce((acc,item)=>{ return acc= acc + item;});}
         return total;
     }
-
     const newOrder = {
         buyer:{
             name: "Marcelo",
@@ -29,15 +32,13 @@ const CartContainer = () => {
             phone: "3819098734"
         },
         items: products,
-        total: calcularTotal()+" €"
+        total: calcularTotal() + " €"
 
     }
-
     const addOrder = () =>{
         console.log("Orden generada: ", newOrder )
         pushOrderFirebase(newOrder);
     }
-
     const pushOrderFirebase = async(newOrder) =>{
         const orderFirebase = collection(db,'orders');
         const order = await addDoc(orderFirebase, newOrder)
@@ -46,7 +47,7 @@ const CartContainer = () => {
     }
 
     return (
-        <div className="cart-container">
+        <div className="cart-container" style={{fontFamily:" 'Bebas Neue', cursive"}}>
             <ul className="cart">
                 {products.map((product) => {
                     return (
@@ -73,11 +74,10 @@ const CartContainer = () => {
                 <Button onClick={clear} style={{display: "flex", margin: "auto", border:"1px solid black"}} >
                     <DeleteIcon sx={{ fontSize: 15 }}/>
                 </Button>
-                <Button onClick={addOrder} variant="outlined" color="secondary" style={{color:"black", border:"1px solid black", marginTop: "40px"}}>
+                <Button onClick={addOrder} variant="outlined" color="secondary" style={{color:"black", border:"1px solid black", marginTop: "40px", fontFamily:" 'Bebas Neue', cursive"}}>
                     Generar Orden
                 </Button> 
             </div>
-        
         </div>
     )
 }

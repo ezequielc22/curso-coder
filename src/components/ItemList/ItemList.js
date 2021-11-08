@@ -1,6 +1,7 @@
 //local
 import React, { useState,useEffect } from 'react';
 import { useParams } from "react-router";
+import Loader from '../Loader/Loader';
 
 //components
 import "./ItemList.css";
@@ -13,6 +14,7 @@ const ItemList = () => {
     const{catId} = useParams();
     
     const[products, setProduct] = useState([]);
+    const[loader,setLoader] = useState(false);
 
 
     async function getProducts(db){
@@ -23,7 +25,11 @@ const ItemList = () => {
         
     }
     useEffect(()=>{
-        
+        setLoader(true);
+        setTimeout(()=>{
+            setLoader(false)
+        }, 3000)
+
         getProducts(db).then((res)=>{
         if(catId===undefined){
             setProduct(res);
@@ -41,11 +47,19 @@ const ItemList = () => {
 
     },[catId])
 
+
     return (
         <div className="cards-container">
-            {products.map((product, index)=>{
-                return (<Item key={index} data={product}/>)
-            })}
+            
+            {
+            loader ? <Loader/> :
+            
+            products.map((product, index)=>{
+                return (
+                <Item key={index} data={product}/>)
+            })
+            
+            }
         </div>
     )
 }

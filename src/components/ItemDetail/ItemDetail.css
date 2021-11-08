@@ -17,19 +17,21 @@
     padding-right: 50px;
 }
 .detail{
-    background-color: white;
+    background-color:  rgb(145 100 46 / 66%);
     display: flex;
     margin-left: 200px;
     margin-right: 200px;
     border: 2px solid rgb(34, 34, 34);
     margin-top: 50px;
     flex-direction: row;
-    box-shadow: 3px 3px rgb(77, 77, 77), -0.4em 0 0.4em #000000;
     position:relative;
+    backdrop-filter: blur(3px);
+    border-radius: 5px;
     
 }
 .title{
-    box-shadow: 3px 3px rgb(77, 77, 77), -0.1em 0 0.1em #c98a3e;
+    box-shadow: 3px 3px rgb(0, 0, 0), -0.1em 0 0.1em #c98a3e;
+    border-radius: 5px;
 }
 .buttons{
     max-width: 200px;

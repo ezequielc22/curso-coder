@@ -1,8 +1,7 @@
 .nav-1{
-    background: linear-gradient(180deg, #91642e, #443420);
-    font-family: 'Bebas Neue', cursive;
+    background-color:  rgb(145 100 46 / 66%) !important;
+    backdrop-filter: blur(3px);
 }
-
 .icon-menu {
     width: 60px;
     height: 30px;
