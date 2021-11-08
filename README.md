@@ -16,4 +16,4 @@ Si hay algun error se mostrara en consola.
 
 ## Visualizacion
 
-![Proyecto Final entrega intermedia](https://github.com/ezequielc22/curso-coder/blob/main/src/images/Proyecto%20Final%20entrega%20intermedia.gif)
+![Proyecto Final entrega intermedia](https://github.com/ezequielc22/curso-coder/blob/main/src/images/Proyecto%20Final%CoderHouse.gif)
